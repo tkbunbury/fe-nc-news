@@ -1,0 +1,45 @@
+.article-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.article-details {
+    margin-bottom: 20px;
+}
+
+.author, .date {
+    margin-right: 10px;
+    color: whitesmoke;
+}
+
+.article-content {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+.votes, .comments {
+    margin-right: 10px;
+}
+
+.comments {
+    margin-left: auto;
+}
