@@ -1,0 +1,52 @@
+.articles-container {
+    padding-top: 40px; 
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; 
+}
+
+.article-card {
+    background-color: #4c4c50;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.article-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.date {
+    color: whitesmoke;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.votes,
+.comments {
+    color: whitesmoke;
+}
