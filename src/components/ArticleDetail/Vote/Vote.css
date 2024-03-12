@@ -1,0 +1,25 @@
+.vote-container {
+    display: flex;
+    align-items: center;
+}
+
+.vote-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.upvote-button {
+    background-color: #2ecc71; 
+    color: white;
+}
+
+.downvote-button {
+    background-color: #e74c3c; 
+    color: white;
+}
+
+.vote-count {
+    margin: 0 8px; 
+}

@@ -5,6 +5,7 @@ import moment from 'moment';
 import { getArticleDetail } from '../../utils/api'
 import { useParams } from 'react-router-dom'
 import ArticleComments from './ArticleComments/ArticleComments';
+import Vote from './Vote/Vote'; // Import the VotingComponent
 
 const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
     const [articleDetail, setArticleDetail] = useState({})
@@ -24,7 +25,7 @@ const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
         .finally(() => {
             setIsLoading(false);
         });
-    }, [setIsLoading, setArticleDetail])
+    }, [id, setIsLoading, setArticleDetail])
 
     return (
         <div className="article-detail">
@@ -43,7 +44,7 @@ const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
                         <p>{articleDetail.body}</p> 
                     </div>
                     <div className="article-meta">
-                        <div className="votes">{articleDetail.votes} votes</div>
+                        <Vote articleId={id} currentVotes={articleDetail.votes} />
                         <div className="comments">{articleDetail.comment_count} comments</div>
                     </div>
                     <ArticleComments/>
