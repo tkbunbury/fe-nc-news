@@ -1,0 +1,34 @@
+.article-comments {
+    margin-top: 20px;
+}
+
+.comment {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-date {
+    color: whitesmoke;
+}
+
+.comment-body {
+    margin-bottom: 10px;
+}
+
+.comment-meta {
+    display: flex;
+    justify-content: flex-end;
+    color: whitesmoke;
+}

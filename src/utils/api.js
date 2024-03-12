@@ -19,4 +19,12 @@ export const getArticleDetail = (id) => {
    
 }
 
+export const getArticleComments = (id) => {
+   return axios.get(`${baseUrl}articles/${id}/comments`)
+   .then(response => {
+    return response
+   })
+   
+}
+
 
