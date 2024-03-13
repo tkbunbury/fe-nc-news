@@ -5,7 +5,7 @@ import moment from 'moment';
 import { getArticleDetail } from '../../utils/api'
 import { useParams } from 'react-router-dom'
 import ArticleComments from './ArticleComments/ArticleComments';
-import Vote from './Vote/Vote'; // Import the VotingComponent
+import Vote from './Vote/Vote'; 
 
 const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
     const [articleDetail, setArticleDetail] = useState({})

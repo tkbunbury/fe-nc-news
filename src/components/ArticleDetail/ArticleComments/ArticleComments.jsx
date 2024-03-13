@@ -2,8 +2,9 @@ import './ArticleComments.css';
 import { useState, useEffect } from 'react'
 import React from 'react';
 import moment from 'moment';
-import { getArticleComments } from '../../../utils/api';
+import { getArticleComments, postNewComment } from '../../../utils/api';
 import { useParams } from 'react-router-dom';
+import PostComment from './PostComment/PostComment';
 
 
 
@@ -32,9 +33,15 @@ const ArticleComments = () => {
         });
     }, [setCommentsLoading, setArticleComments])
 
+    const addComment = (newComment) => {
+        setArticleComments([newComment, ...articleComments]);
+    };
+
+
     return (
         <div className="article-comments">
             <h2>Comments</h2>
+            <PostComment articleId={id} addComment={addComment} />
             {commentsLoading ? (
                 <p>Loading comments...</p>
             ) : (

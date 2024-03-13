@@ -37,4 +37,19 @@ export const updateArticleVotes = (id, voteChange) => {
    });
 };
 
+export const postNewComment = (id, username, comment) => {
+   const data = {
+      username: username,
+      body: comment,
+   };
+
+   return axios.post(`${baseUrl}articles/${id}/comments`, data)
+   .then(response => {
+      return response.data.comment; 
+   })
+   .catch(error => {
+      throw error; 
+   });
+}
+
 
