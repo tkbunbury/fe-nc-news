@@ -9,26 +9,26 @@ export const getArticles = () => {
    
 }
 
-export const getArticleDetail = (id) => {
-   return axios.get(`${baseUrl}articles/${id}`)
+export const getArticleDetail = (article_id) => {
+   return axios.get(`${baseUrl}articles/${article_id}`)
    .then(response => {
       return response
    })
    
 }
 
-export const getArticleComments = (id) => {
-   return axios.get(`${baseUrl}articles/${id}/comments`)
+export const getArticleComments = (article_id) => {
+   return axios.get(`${baseUrl}articles/${article_id}/comments`)
    .then(response => {
       return response
    })
    
 }
 
-export const updateArticleVotes = (id, voteChange) => {
+export const updateArticleVotes = (article_id, voteChange) => {
    const data = { inc_votes: voteChange }; 
 
-   return axios.patch(`${baseUrl}articles/${id}`, data)
+   return axios.patch(`${baseUrl}articles/${article_id}`, data)
    .then(response => {
       return response.data.updatedArticle.votes; 
    })
@@ -37,13 +37,13 @@ export const updateArticleVotes = (id, voteChange) => {
    });
 };
 
-export const postNewComment = (id, username, comment) => {
+export const postNewComment = (article_id, username, comment) => {
    const data = {
       username: username,
       body: comment,
    };
 
-   return axios.post(`${baseUrl}articles/${id}/comments`, data)
+   return axios.post(`${baseUrl}articles/${article_id}/comments`, data)
    .then(response => {
       return response.data.comment; 
    })
@@ -52,4 +52,13 @@ export const postNewComment = (id, username, comment) => {
    });
 }
 
+export const deleteComment = (comment_id) => {
+   return axios.delete(`${baseUrl}comments/${comment_id}`)
+   .then(response => {
+      return response.data; 
+   })
+   .catch(error => {
+      throw error; 
+   });
+};
 

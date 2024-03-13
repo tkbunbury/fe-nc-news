@@ -1,0 +1,7 @@
+.comment {
+    transition: opacity 0.5s ease; 
+}
+
+.comment.hidden {
+    opacity: 0; 
+}

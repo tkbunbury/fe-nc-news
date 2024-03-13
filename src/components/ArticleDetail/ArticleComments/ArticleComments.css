@@ -29,6 +29,11 @@
 
 .comment-meta {
     display: flex;
-    justify-content: flex-end;
+    align-items: center; 
+    justify-content: space-between; 
     color: whitesmoke;
+}
+
+.comment-votes {
+    margin-right: 10px; 
 }

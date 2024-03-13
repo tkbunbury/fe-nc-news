@@ -1,5 +1,5 @@
 import './Articles.css'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import moment from 'moment';
 import { getArticles } from '../../utils/api'
 import ArticleCard from './ArticleCard/ArticleCard';

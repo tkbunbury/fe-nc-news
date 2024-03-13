@@ -2,7 +2,7 @@ import './ArticleComments.css';
 import { useState, useEffect } from 'react'
 import React from 'react';
 import moment from 'moment';
-import { getArticleComments, postNewComment } from '../../../utils/api';
+import { getArticleComments } from '../../../utils/api';
 import { useParams } from 'react-router-dom';
 import PostComment from './PostComment/PostComment';
 import CommentCard from './CommentCard/CommentCard';
