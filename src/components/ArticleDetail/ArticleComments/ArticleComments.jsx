@@ -5,6 +5,7 @@ import moment from 'moment';
 import { getArticleComments, postNewComment } from '../../../utils/api';
 import { useParams } from 'react-router-dom';
 import PostComment from './PostComment/PostComment';
+import CommentCard from './CommentCard/CommentCard';
 
 
 
@@ -46,16 +47,7 @@ const ArticleComments = () => {
                 <p>Loading comments...</p>
             ) : (
             articleComments.map((comment, index) => (
-                <div key={index} className="comment">
-                    <div className="comment-header">
-                        <span className="comment-author">{comment.author}</span>
-                        <span className="comment-date">{comment.formattedData}</span>
-                    </div>
-                    <p className="comment-body">{comment.body}</p>
-                    <div className="comment-meta">
-                        <span className="comment-votes">{comment.votes} votes</span>
-                    </div>
-                </div>
+                <CommentCard key={index} comment={comment} />
                 ))
             )}
         </div>
