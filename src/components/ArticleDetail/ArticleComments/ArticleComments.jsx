@@ -11,8 +11,9 @@ import CommentCard from './CommentCard/CommentCard';
 
 const ArticleComments = () => {
 
-    const [articleComments, setArticleComments] = useState([])
+    const [articleComments, setArticleComments] = useState([]);
     const [commentsLoading, setCommentsLoading] = useState(false);
+    const [users, setUsers] = useState([]);
 
     const { id } = useParams()
 
@@ -42,7 +43,7 @@ const ArticleComments = () => {
     return (
         <div className="article-comments">
             <h2>Comments</h2>
-            <PostComment articleId={id} addComment={addComment} />
+            <PostComment articleId={id} addComment={addComment} users={users} setUsers={setUsers} />
             {commentsLoading ? (
                 <p>Loading comments...</p>
             ) : (

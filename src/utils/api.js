@@ -73,3 +73,10 @@ export const getArticlesByTopic = (topic) => {
    })
 }
 
+export const getUsers = () => {
+   return axios.get(`${baseUrl}users`)
+   .then(response => {
+      return response
+   })
+}
+

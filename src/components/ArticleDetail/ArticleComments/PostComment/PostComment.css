@@ -3,7 +3,7 @@
 }
 
 .post-comment-input {
-    width: 100%;
+    width: calc(100% - 24px);
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -21,4 +21,18 @@
 
 .post-comment-button:hover {
     background-color: #0056b3;
+}
+
+.post-comment-dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+    font-size: 16px;
+    box-sizing: border-box;
+}  
+.post-comment-dropdown option {
+    font-size: 16px;
 }
