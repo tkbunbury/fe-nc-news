@@ -2,8 +2,8 @@ import './PostComment.css';
 import React, { useEffect, useState } from 'react';
 import { postNewComment, getUsers } from '../../../../utils/api'; 
 
-const PostComment = ({ articleId, addComment, users, setUsers }) => {
-    const [selectedUser, setSelectedUser] = useState('');
+const PostComment = ({ articleId, addComment, users, setUsers, selectedUser, setSelectedUser }) => {
+    
     const [comment, setComment] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
