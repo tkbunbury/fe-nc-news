@@ -5,6 +5,8 @@ import Nav from './components/Nav/Nav'
 import Homepage from './components/Homepage/Homepage'
 import Articles from './components/Articles/Articles'
 import ArticleDetail from './components/ArticleDetail/ArticleDetail';
+import Topics from './components/Topics/Topics'
+import ArticlesByTopic from './components/ArticlesByTopic/ArticlesByTopic'
 
 
 
@@ -19,8 +21,11 @@ function App() {
       <Nav/>
       <Routes>
         <Route path='/' element={<Homepage/>}/>
+        <Route path='/topics' element={<Topics isLoading={isLoading} setIsLoading={setIsLoading}/>}/>
         <Route path='/articles' element={<Articles articles={articles} setArticles={setArticles} isLoading={isLoading} setIsLoading={setIsLoading}/>}/>
-        <Route path="/articles/:id" element={<ArticleDetail articles={articles} isLoading={isLoading} setIsLoading={setIsLoading}/>}/> 
+        <Route path={`/articles/:topic`} element={<ArticlesByTopic isLoading={isLoading} setIsLoading={setIsLoading}/>}/>
+        <Route path="/article/:id" element={<ArticleDetail articles={articles} isLoading={isLoading} setIsLoading={setIsLoading}/>}/> 
+        
       </Routes>
     </>
   </BrowserRouter>

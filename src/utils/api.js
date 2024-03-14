@@ -6,7 +6,6 @@ export const getArticles = () => {
    .then(response => {
       return response
    })
-   
 }
 
 export const getArticleDetail = (article_id) => {
@@ -14,7 +13,6 @@ export const getArticleDetail = (article_id) => {
    .then(response => {
       return response
    })
-   
 }
 
 export const getArticleComments = (article_id) => {
@@ -22,7 +20,6 @@ export const getArticleComments = (article_id) => {
    .then(response => {
       return response
    })
-   
 }
 
 export const updateArticleVotes = (article_id, voteChange) => {
@@ -61,4 +58,18 @@ export const deleteComment = (comment_id) => {
       throw error; 
    });
 };
+
+export const getTopics = () => {
+   return axios.get(`${baseUrl}topics`)
+   .then(response => {
+      return response
+   })
+}
+
+export const getArticlesByTopic = (topic) => {
+   return axios.get(`${baseUrl}articles?topic=${topic}`)
+   .then(response => {
+      return response
+   })
+}
 
