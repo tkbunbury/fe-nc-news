@@ -7,13 +7,12 @@ import { useParams } from 'react-router-dom';
 import PostComment from './PostComment/PostComment';
 import CommentCard from './CommentCard/CommentCard';
 
-
-
 const ArticleComments = () => {
 
     const [articleComments, setArticleComments] = useState([]);
     const [commentsLoading, setCommentsLoading] = useState(false);
     const [users, setUsers] = useState([]);
+    const [selectedUser, setSelectedUser] = useState('');
 
     const { id } = useParams()
 
@@ -43,12 +42,12 @@ const ArticleComments = () => {
     return (
         <div className="article-comments">
             <h2>Comments</h2>
-            <PostComment articleId={id} addComment={addComment} users={users} setUsers={setUsers} />
+            <PostComment articleId={id} addComment={addComment} users={users} setUsers={setUsers} selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
             {commentsLoading ? (
                 <p>Loading comments...</p>
             ) : (
             articleComments.map((comment, index) => (
-                <CommentCard key={index} comment={comment} />
+                <CommentCard key={index} comment={comment} users={users} setUsers={setUsers} selectedUser={selectedUser} />
                 ))
             )}
         </div>
