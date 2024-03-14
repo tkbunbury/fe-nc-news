@@ -1,24 +1,36 @@
 import './PostComment.css';
-import React, { useState } from 'react';
-import { postNewComment } from '../../../../utils/api'; 
+import React, { useEffect, useState } from 'react';
+import { postNewComment, getUsers } from '../../../../utils/api'; 
 
-const PostComment = ({ articleId, addComment }) => {
-    const [username, setUsername] = useState('');
+const PostComment = ({ articleId, addComment, users, setUsers }) => {
+    const [selectedUser, setSelectedUser] = useState('');
     const [comment, setComment] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+
+    useEffect(() => {
+        getUsers()
+        .then(response => {
+            const parsedData = response.data.users
+            setUsers(parsedData);
+        })
+        .catch(error => {
+            console.error('Error fetching users:', error);
+        })
+
+    }, [setUsers])
 
     const handlePostComment = async (event) => {
         event.preventDefault();
 
-        if (!username.trim() || !comment.trim()) {
-            setErrorMessage('Please fill in both fields.');
+        if (!selectedUser || !comment.trim()) {
+            setErrorMessage('Please select a user and fill in the comment field.');
             return;
         }
         
         try {
-            const newComment = await postNewComment(articleId, username, comment);
+            const newComment = await postNewComment(articleId, selectedUser, comment);
             addComment(newComment); 
-            setUsername('');
+            setSelectedUser('');
             setComment(''); 
             setErrorMessage(''); 
         } catch (error) {
@@ -29,13 +41,16 @@ const PostComment = ({ articleId, addComment }) => {
 
     return (
         <div className="post-comment-container">
-            <input
-                type="text"
-                placeholder="Your username"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-                className="post-comment-input"
-            />
+            <select
+                value={selectedUser}
+                onChange={(event) => setSelectedUser(event.target.value)}
+                className="post-comment-dropdown"
+            >
+                <option value="">Select user...</option>
+                {users.map(user => (
+                    <option key={user.username} value={user.username}>{user.username}</option>
+                ))}
+            </select>
             <textarea
                 placeholder="Write your comment here..."
                 value={comment}
