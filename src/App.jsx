@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav/Nav'
 import Homepage from './components/Homepage/Homepage'
+import ErrorPage from './components/ErrorPage/ErrorPage'
 import Articles from './components/Articles/Articles'
 import ArticleDetail from './components/ArticleDetail/ArticleDetail';
 import Topics from './components/Topics/Topics'
@@ -17,6 +18,7 @@ function App() {
     <>
       <Nav/>
       <Routes>
+        <Route path='*' element={<ErrorPage/>}/>
         <Route path='/' element={<Homepage/>}/>
         <Route path='/topics' element={<Topics isLoading={isLoading} setIsLoading={setIsLoading}/>}/>
         <Route path='/articles' element={<Articles articles={articles} setArticles={setArticles} isLoading={isLoading} setIsLoading={setIsLoading}/>}/>
