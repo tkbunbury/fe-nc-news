@@ -9,6 +9,7 @@ import Vote from './Vote/Vote';
 
 const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
     const [articleDetail, setArticleDetail] = useState({})
+    const [error, setError] = useState(false)
     const { id } = useParams()
 
     useEffect(() => {
@@ -21,13 +22,22 @@ const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
         })
         .catch(error => {
             console.error('Error fetching article detail:', error);
+            setError(true)
         })
         .finally(() => {
             setIsLoading(false);
         });
     }, [id, setIsLoading, setArticleDetail])
 
-    return (
+    if (error === true) {
+        return (
+            <div className="error-container">
+            <p className="error-message">Oops! The article you are looking for does not exist.</p>
+        </div>
+        )
+    }
+    else {
+        return (
         <div className="article-detail">
             {isLoading ? (
                 <p>Loading...</p>
@@ -52,6 +62,9 @@ const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
             )}
         </div>
     );
+    }
+
+    
 }
 
 export default ArticleDetail;
