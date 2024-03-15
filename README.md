@@ -4,7 +4,7 @@ Welcome to TK's News Project! This project is a social news aggregation, web con
 
 ## Deployed Version
 
-You can find the deployed version of this project [here](#). (Replace '#' with my deployed link)
+You can find the deployed version of this project [here](https://tk-news.netlify.app/). 
 
 ## General Info
 
