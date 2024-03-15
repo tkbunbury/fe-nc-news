@@ -51,9 +51,9 @@ const Articles = ({articles, setArticles, isLoading, setIsLoading}) => {
         <h1 className="page-title">Articles</h1>
         <SortDropdown sortBy={sortBy} sortOrder={sortOrder} handleSortChange={handleSortChange} />
         {isLoading ? (
-          <p>Loading...</p>
+        <p>Loading...</p>
         ) : (
-          articles.map((article, index) => <ArticleCard key={index} article={article} />)
+            articles.map((article, index) => <ArticleCard key={index} article={article} />)
         )}
     </div>
     );
