@@ -1,0 +1,29 @@
+.sorting-controls {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.sort-dropdown-select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.sort-dropdown-select:last-child {
+    margin-right: 0;
+}
+
+.sort-dropdown-select:hover {
+    border-color: #007bff;
+}
+
+.sort-dropdown-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.sort-dropdown-select option {
+    font-size: 16px;
+}

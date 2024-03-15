@@ -48,7 +48,6 @@ const ArticleDetail = ({ articles, isLoading, setIsLoading }) => {
                         <div className="comments">{articleDetail.comment_count} comments</div>
                     </div>
                     <ArticleComments/>
-
                 </>
             )}
         </div>
