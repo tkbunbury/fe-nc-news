@@ -1,11 +1,17 @@
 import axios from 'axios';
 const baseUrl = 'https://takai-nc-news.onrender.com/api/';
 
-export const getArticles = () => {
-   return axios.get(`${baseUrl}articles`)
-   .then(response => {
-      return response
-   })
+export const getArticles = ({ sortBy, sortOrder }) => {
+   const params = {
+      sort_by: sortBy,
+      order: sortOrder,
+   };
+
+   return axios.get(`${baseUrl}articles`, { params })
+      .then(response => response)
+      .catch(error => {
+         throw error;
+      });
 }
 
 export const getArticleDetail = (article_id) => {
@@ -66,11 +72,17 @@ export const getTopics = () => {
    })
 }
 
-export const getArticlesByTopic = (topic) => {
-   return axios.get(`${baseUrl}articles?topic=${topic}`)
-   .then(response => {
-      return response
-   })
+export const getArticlesByTopic = (topic, { sortBy, sortOrder }) => {
+   let url = `${baseUrl}articles?topic=${topic}`;
+   if (sortBy && sortOrder) {
+      url += `&sort_by=${sortBy}&order=${sortOrder}`;
+   }
+
+   return axios.get(url)
+   .then(response => response)
+   .catch(error => {
+      throw error;
+   });
 }
 
 export const getUsers = () => {

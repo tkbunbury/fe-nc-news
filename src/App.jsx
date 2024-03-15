@@ -8,9 +8,6 @@ import ArticleDetail from './components/ArticleDetail/ArticleDetail';
 import Topics from './components/Topics/Topics'
 import ArticlesByTopic from './components/ArticlesByTopic/ArticlesByTopic'
 
-
-
-
 function App() {
   const [articles, setArticles] = useState([])
   const [isLoading, setIsLoading] = useState(false);
