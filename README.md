@@ -12,9 +12,9 @@ TK's News has articles which are divided into topics, and each article has user-
 
 ## Backend Repository
 
-You can find the backend repository for this project [here](https://github.com/tkbunbury/fe-nc-news.git). 
+You can find the backend repository for this project [here](https://github.com/tkbunbury/nc-news.git). 
 
-You can find the hosted version of the backend API [here](https://github.com/tkbunbury/nc-news.git).
+You can find the hosted version of the backend API [here](https://takai-nc-news.onrender.com/api).
 
 ## Requirements
 
