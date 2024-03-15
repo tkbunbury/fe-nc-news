@@ -26,6 +26,7 @@
     font-weight: bold;
     color: whitesmoke;
     margin-bottom: 10px;
+    text-transform: capitalize;
   }
   
   .topic-description {
